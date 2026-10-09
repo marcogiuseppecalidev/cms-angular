@@ -1,0 +1,751 @@
+<div class="store">
+
+    <!-- ============================= -->
+    <!-- ANNOUNCEMENT BAR -->
+    <!-- ============================= -->
+
+    <div class="announcement">
+
+        <div>
+            ✨ BENVENUTO SU CALI STORE
+        </div>
+
+        <div class="announcement-center">
+            COLLECT YOUR WORLD
+        </div>
+
+        <div>
+            SCOPRI LE NOVITÀ →
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <span class="logo-cali">
+                CALI
+            </span>
+
+            <span class="logo-store">
+                STORE
+            </span>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="#home">
+                HOME
+            </a>
+
+            <a href="#shop">
+                SHOP
+            </a>
+
+            <a href="#categorie">
+                CATEGORIE
+            </a>
+
+            <a href="#novita">
+                NOVITÀ
+            </a>
+
+            <a href="#offerte">
+                OFFERTE
+            </a>
+
+        </nav>
+
+
+        <div class="header-actions">
+
+            <button class="header-icon">
+                🔍
+            </button>
+
+            <button class="header-icon">
+                ♡
+            </button>
+
+            <button class="header-icon">
+                👤
+            </button>
+
+            <button class="cart">
+
+                🛒
+
+                <span>
+                    0
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- HERO -->
+    <!-- ============================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-left">
+
+            <div class="hero-label">
+                ✦ IL TUO MONDO DI COLLEZIONABILI
+            </div>
+
+            <h1>
+
+                FIND
+                <span>YOUR</span>
+                FAVOURITE.
+
+            </h1>
+
+            <p>
+                Funko, Fuggler, Sonny Angel, Pop Mart,
+                Miniso e tanto altro.
+                Scopri il tuo prossimo pezzo da collezione.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#shop" class="button-primary">
+                    SHOP NOW →
+                </a>
+
+                <a href="#categorie" class="button-secondary">
+                    ESPLORE CATEGORIE
+                </a>
+
+            </div>
+
+
+            <div class="hero-info">
+
+                <div>
+                    <strong>500+</strong>
+                    <span>PRODOTTI</span>
+                </div>
+
+                <div>
+                    <strong>5</strong>
+                    <span>CATEGORIE</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>ONLINE</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-right">
+
+            <div class="hero-circle circle-one"></div>
+            <div class="hero-circle circle-two"></div>
+
+
+            <div class="floating-card card-top">
+
+                <span>NEW</span>
+
+                <div>
+                    👼
+                </div>
+
+            </div>
+
+
+            <div class="main-product">
+
+                <div class="product-shadow"></div>
+
+                <div class="main-emoji">
+                    🎁
+                </div>
+
+                <div class="main-product-label">
+
+                    <span>
+                        CALI
+                    </span>
+
+                    <strong>
+                        COLLECTION
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-card card-bottom">
+
+                <span>HOT</span>
+
+                <div>
+                    👹
+                </div>
+
+            </div>
+
+
+            <div class="star star-one">
+                ✦
+            </div>
+
+            <div class="star star-two">
+                ✦
+            </div>
+
+            <div class="star star-three">
+                ✦
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- COLOR STRIP -->
+    <!-- ============================= -->
+
+    <section class="color-strip">
+
+        <div>
+            🎁 NOVITÀ OGNI SETTIMANA
+        </div>
+
+        <div>
+            ✨ EDIZIONI SPECIALI
+        </div>
+
+        <div>
+            💜 PER VERI COLLEZIONISTI
+        </div>
+
+        <div>
+            🚀 CALI STORE
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- CATEGORIES -->
+    <!-- ============================= -->
+
+    <section class="section categories-section" id="categorie">
+
+        <div class="section-title">
+
+            <div>
+
+                <span>
+                    ESPLORA
+                </span>
+
+                <h2>
+                    SHOP BY
+                    <strong>CATEGORY</strong>
+                </h2>
+
+            </div>
+
+            <p>
+                Tutto quello che ami,
+                in un unico posto.
+            </p>
+
+        </div>
+
+
+        <div class="categories-grid">
+
+            @for (category of categories; track category.name) {
+
+            <div class="category-card" [class]="category.color">
+
+                <div class="category-top">
+
+                    <span class="category-number">
+                        0{{ $index + 1 }}
+                    </span>
+
+                    <span class="category-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <div class="category-emoji">
+                    {{ category.emoji }}
+                </div>
+
+
+                <div class="category-bottom">
+
+                    <h3>
+                        {{ category.name }}
+                    </h3>
+
+                    <span>
+                        {{ category.products }}
+                    </span>
+
+                </div>
+
+            </div>
+
+            }
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- PRODUCTS -->
+    <!-- ============================= -->
+
+    <section class="products-section" id="shop">
+
+        <div class="section products-container">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span>
+                        CALI STORE SELECTION
+                    </span>
+
+                    <h2>
+                        TRENDING
+                        <strong>NOW</strong>
+                    </h2>
+
+                </div>
+
+                <a href="#shop" class="see-all">
+                    VEDI TUTTI →
+                </a>
+
+            </div>
+
+
+            <div class="filter-bar">
+
+                <button class="filter active">
+                    TUTTI
+                </button>
+
+                <button class="filter">
+                    FUNKO
+                </button>
+
+                <button class="filter">
+                    FUGGLER
+                </button>
+
+                <button class="filter">
+                    SONNY ANGEL
+                </button>
+
+                <button class="filter">
+                    POP MART
+                </button>
+
+                <button class="filter">
+                    MINISO
+                </button>
+
+            </div>
+
+
+            <div class="products-grid">
+
+                @for (product of products; track product.name) {
+
+                <article class="product-card">
+
+
+                    <div class="product-visual" [class]="product.color">
+
+                        <span class="product-badge">
+                            {{ product.badge }}
+                        </span>
+
+
+                        <button class="heart">
+                            ♡
+                        </button>
+
+
+                        <div class="product-emoji">
+                            {{ product.emoji }}
+                        </div>
+
+
+                        <div class="product-shine"></div>
+
+                    </div>
+
+
+                    <div class="product-details">
+
+                        <span class="product-category">
+                            {{ product.category }}
+                        </span>
+
+                        <h3>
+                            {{ product.name }}
+                        </h3>
+
+
+                        <div class="rating">
+                            ★★★★★
+                            <span>
+                                4.9
+                            </span>
+                        </div>
+
+
+                        <div class="price-row">
+
+                            <div>
+
+                                <strong>
+                                    €{{ product.price.toFixed(2) }}
+                                </strong>
+
+                                <del>
+                                    €{{ product.oldPrice.toFixed(2) }}
+                                </del>
+
+                            </div>
+
+                            <button class="add-button">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- BIG PROMO -->
+    <!-- ============================= -->
+
+    <section class="promo" id="offerte">
+
+        <div class="promo-decoration">
+            CALI
+        </div>
+
+
+        <div class="promo-content">
+
+            <span>
+                ✦ CALI STORE EXCLUSIVE
+            </span>
+
+            <h2>
+                COLLECT
+                <br>
+                SOMETHING
+                <br>
+                <strong>AMAZING.</strong>
+            </h2>
+
+            <p>
+                Scopri le nostre collezioni,
+                le novità e le edizioni più ricercate.
+            </p>
+
+            <a href="#shop" class="promo-button">
+                SCOPRI LA COLLECTION →
+            </a>
+
+        </div>
+
+
+        <div class="promo-art">
+
+            <div class="promo-circle"></div>
+
+            <div class="promo-object object-one">
+                🎭
+            </div>
+
+            <div class="promo-object object-two">
+                👼
+            </div>
+
+            <div class="promo-object object-three">
+                👹
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- FEATURES -->
+    <!-- ============================= -->
+
+    <section class="benefits">
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                🚚
+            </div>
+
+            <div>
+
+                <strong>
+                    SPEDIZIONI
+                </strong>
+
+                <p>
+                    Prepariamo ogni ordine con cura.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <strong>
+                    PAGAMENTI SICURI
+                </strong>
+
+                <p>
+                    I tuoi acquisti sempre protetti.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                💬
+            </div>
+
+            <div>
+
+                <strong>
+                    SUPPORTO
+                </strong>
+
+                <p>
+                    Siamo qui per aiutarti.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">
+                ⭐
+            </div>
+
+            <div>
+
+                <strong>
+                    CALI QUALITY
+                </strong>
+
+                <p>
+                    Selezioniamo prodotti speciali.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+
+                    <strong>
+                        CALI
+                    </strong>
+
+                    <span>
+                        STORE
+                    </span>
+
+                </div>
+
+                <p>
+                    Your world.
+                    Your collection.
+                    Your CALI STORE.
+                </p>
+
+
+                <div class="socials">
+
+                    <a href="#">
+                        IG
+                    </a>
+
+                    <a href="#">
+                        TT
+                    </a>
+
+                    <a href="#">
+                        FB
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    SHOP
+                </h4>
+
+                <a href="#shop">
+                    Tutti i prodotti
+                </a>
+
+                <a href="#categorie">
+                    Categorie
+                </a>
+
+                <a href="#novita">
+                    Nuovi arrivi
+                </a>
+
+                <a href="#offerte">
+                    Offerte
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    SUPPORTO
+                </h4>
+
+                <a href="#">
+                    Contatti
+                </a>
+
+                <a href="#">
+                    Spedizioni
+                </a>
+
+                <a href="#">
+                    Resi
+                </a>
+
+                <a href="#">
+                    FAQ
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    CALI STORE
+                </h4>
+
+                <a href="#">
+                    Chi siamo
+                </a>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Termini e condizioni
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CALI STORE
+            </span>
+
+            <span>
+                MADE FOR COLLECTORS.
+            </span>
+
+        </div>
+
+    </footer>
+
+</div>
