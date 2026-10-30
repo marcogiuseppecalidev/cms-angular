@@ -1,454 +1,525 @@
-<div class="store">
+<div class="store-shell" id="top">
 
-    <!-- ============================= -->
-    <!-- ANNOUNCEMENT BAR -->
-    <!-- ============================= -->
-
-    <div class="announcement">
-
-        <div>
-            ✨ BENVENUTO SU CALI STORE
-        </div>
-
-        <div class="announcement-center">
-            COLLECT YOUR WORLD
-        </div>
-
-        <div>
-            SCOPRI LE NOVITÀ →
-        </div>
-
+    <!-- PROMO BAR -->
+    <div class="top-promo">
+        <span class="promo-dot"></span>
+        <span>WELCOME TO CALI STORE — THE COLLECTOR'S WORLD</span>
+        <a href="#catalogo">ESPLORA LO STORE ↗</a>
     </div>
 
-
-    <!-- ============================= -->
     <!-- HEADER -->
-    <!-- ============================= -->
+    <header class="shop-header">
 
-    <header class="header">
+        <a class="brand" routerLink="/" aria-label="CALI STORE Home">
+            <span class="brand-symbol">C</span>
+            <span class="brand-name">CALI<span>STORE</span></span>
+        </a>
 
-        <div class="logo">
+        <form class="header-search" (submit)="$event.preventDefault(); focusSearch()">
+            <span class="search-icon">⌕</span>
 
-            <span class="logo-cali">
-                CALI
-            </span>
+            <input #searchInput type="search" placeholder="Cerca il tuo prossimo pezzo da collezione..."
+                [value]="searchTerm" (input)="onSearchInput($event)" aria-label="Cerca prodotti" />
 
-            <span class="logo-store">
-                STORE
-            </span>
-
-        </div>
-
-
-        <nav class="navigation">
-
-            <a href="#home">
-                HOME
-            </a>
-
-            <a href="#shop">
-                SHOP
-            </a>
-
-            <a href="#categorie">
-                CATEGORIE
-            </a>
-
-            <a href="#novita">
-                NOVITÀ
-            </a>
-
-            <a href="#offerte">
-                OFFERTE
-            </a>
-
-        </nav>
-
-
-        <div class="header-actions">
-
-            <button class="header-icon">
-                🔍
+            @if (searchTerm) {
+            <button type="button" class="clear-search" (click)="clearSearch()" aria-label="Cancella ricerca">
+                ×
             </button>
-
-            <button class="header-icon">
-                ♡
-            </button>
-
-            <button class="header-icon">
-                👤
-            </button>
-
-            <button class="cart">
-
-                🛒
-
-                <span>
-                    0
-                </span>
-
-            </button>
-
-        </div>
-
-    </header>
-
-
-    <!-- ============================= -->
-    <!-- HERO -->
-    <!-- ============================= -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-left">
-
-            <div class="hero-label">
-                ✦ IL TUO MONDO DI COLLEZIONABILI
-            </div>
-
-            <h1>
-
-                FIND
-                <span>YOUR</span>
-                FAVOURITE.
-
-            </h1>
-
-            <p>
-                Funko, Fuggler, Sonny Angel, Pop Mart,
-                Miniso e tanto altro.
-                Scopri il tuo prossimo pezzo da collezione.
-            </p>
-
-
-            <div class="hero-buttons">
-
-                <a href="#shop" class="button-primary">
-                    SHOP NOW →
-                </a>
-
-                <a href="#categorie" class="button-secondary">
-                    ESPLORE CATEGORIE
-                </a>
-
-            </div>
-
-
-            <div class="hero-info">
-
-                <div>
-                    <strong>500+</strong>
-                    <span>PRODOTTI</span>
-                </div>
-
-                <div>
-                    <strong>5</strong>
-                    <span>CATEGORIE</span>
-                </div>
-
-                <div>
-                    <strong>24/7</strong>
-                    <span>ONLINE</span>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-right">
-
-            <div class="hero-circle circle-one"></div>
-            <div class="hero-circle circle-two"></div>
-
-
-            <div class="floating-card card-top">
-
-                <span>NEW</span>
-
-                <div>
-                    👼
-                </div>
-
-            </div>
-
-
-            <div class="main-product">
-
-                <div class="product-shadow"></div>
-
-                <div class="main-emoji">
-                    🎁
-                </div>
-
-                <div class="main-product-label">
-
-                    <span>
-                        CALI
-                    </span>
-
-                    <strong>
-                        COLLECTION
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="floating-card card-bottom">
-
-                <span>HOT</span>
-
-                <div>
-                    👹
-                </div>
-
-            </div>
-
-
-            <div class="star star-one">
-                ✦
-            </div>
-
-            <div class="star star-two">
-                ✦
-            </div>
-
-            <div class="star star-three">
-                ✦
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- COLOR STRIP -->
-    <!-- ============================= -->
-
-    <section class="color-strip">
-
-        <div>
-            🎁 NOVITÀ OGNI SETTIMANA
-        </div>
-
-        <div>
-            ✨ EDIZIONI SPECIALI
-        </div>
-
-        <div>
-            💜 PER VERI COLLEZIONISTI
-        </div>
-
-        <div>
-            🚀 CALI STORE
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- CATEGORIES -->
-    <!-- ============================= -->
-
-    <section class="section categories-section" id="categorie">
-
-        <div class="section-title">
-
-            <div>
-
-                <span>
-                    ESPLORA
-                </span>
-
-                <h2>
-                    SHOP BY
-                    <strong>CATEGORY</strong>
-                </h2>
-
-            </div>
-
-            <p>
-                Tutto quello che ami,
-                in un unico posto.
-            </p>
-
-        </div>
-
-
-        <div class="categories-grid">
-
-            @for (category of categories; track category.name) {
-
-            <div class="category-card" [class]="category.color">
-
-                <div class="category-top">
-
-                    <span class="category-number">
-                        0{{ $index + 1 }}
-                    </span>
-
-                    <span class="category-arrow">
-                        ↗
-                    </span>
-
-                </div>
-
-
-                <div class="category-emoji">
-                    {{ category.emoji }}
-                </div>
-
-
-                <div class="category-bottom">
-
-                    <h3>
-                        {{ category.name }}
-                    </h3>
-
-                    <span>
-                        {{ category.products }}
-                    </span>
-
-                </div>
-
-            </div>
-
             }
 
+            <button type="submit" class="search-submit">
+                CERCA ↗
+            </button>
+        </form>
+
+        <div class="header-tools">
+
+            <button type="button" class="tool-button" [class.is-active]="favoritesOnly" (click)="toggleFavoritesView()"
+                aria-label="Preferiti">
+                <span class="tool-symbol">♡</span>
+                <span class="tool-caption">Preferiti</span>
+            </button>
+
+            <a routerLink="/login" class="tool-button" aria-label="Account">
+                <span class="tool-symbol">♙</span>
+                <span class="tool-caption">Account</span>
+            </a>
+
+            <button type="button" class="tool-button cart-trigger" (click)="toggleCart()" aria-label="Carrello">
+                <span class="tool-symbol">🛒</span>
+                <span class="tool-caption">Carrello</span>
+
+                @if (cartCount > 0) {
+                <span class="cart-count">{{ cartCount }}</span>
+                }
+            </button>
+
         </div>
+    </header>
 
-    </section>
+    <!-- NAVIGAZIONE -->
+    <nav class="shop-navigation" aria-label="Categorie">
 
+        <a href="#catalogo" (click)="selectCategory('TUTTI')">
+            TUTTI I PRODOTTI
+        </a>
 
-    <!-- ============================= -->
-    <!-- PRODUCTS -->
-    <!-- ============================= -->
+        <!-- FUNKO POP COLLEGATO ALLO SHOWROOM -->
+        <a routerLink="/showroom">
+            FUNKO POP!
+        </a>
 
-    <section class="products-section" id="shop">
+        <a href="#catalogo" (click)="selectCategory('FUGGLER')">
+            FUGGLER
+        </a>
 
-        <div class="section products-container">
+        <a href="#catalogo" (click)="selectCategory('SONNY ANGEL')">
+            SONNY ANGEL
+        </a>
 
-            <div class="section-title">
+        <a href="#catalogo" (click)="selectCategory('POP MART')">
+            POP MART
+        </a>
+
+        <a href="#catalogo" (click)="selectCategory('MINISO')">
+            MINISO
+        </a>
+
+    </nav>
+
+    <main>
+
+        <!-- HERO PREMIUM -->
+        <section class="campaign-banner">
+
+            <div class="campaign-copy">
+
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    WELCOME TO THE COLLECTOR'S WORLD
+                </div>
+
+                <span class="hero-label">
+                    THE NEXT GENERATION OF COLLECTING
+                </span>
+
+                <h1>
+                    IL TUO MONDO.
+                    <span>LA TUA</span>
+                    COLLEZIONE.
+                </h1>
+
+                <p>
+                    Funko Pop, Fuggler, Sonny Angel, Pop Mart e Miniso.
+                    Scopri un universo di personaggi iconici e trova
+                    il prossimo pezzo della tua collezione.
+                </p>
+
+                <div class="campaign-actions">
+
+                    <a href="#catalogo" class="primary-action">
+                        SCOPRI LA COLLEZIONE
+                        <span>↗</span>
+                    </a>
+
+                    <a href="#categorie" class="secondary-action">
+                        ESPLORA LE CATEGORIE
+                    </a>
+
+                </div>
+
+                <div class="campaign-footnote">
+                    <span class="footnote-mark">✳</span>
+                    COLLECT WHAT YOU LOVE.
+                </div>
+
+            </div>
+
+            <!-- FOTO PRINCIPALE DEL BANNER -->
+            <div class="campaign-art">
+
+                <div class="hero-image-frame">
+                    <img src="/cali-store-toys.jpg" alt="Collezionabili CALI STORE" class="hero-product-image" />
+                </div>
+
+                <div class="hero-image-glow"></div>
+
+                <div class="hero-floating-label">
+                    <span>DISCOVER</span>
+                    <strong>YOUR NEXT<br />OBSESSION.</strong>
+                </div>
+
+                <div class="hero-edition-label">
+                    CALI STORE / COLLECTION 2026
+                </div>
+
+            </div>
+
+            <div class="hero-bottom-line">
+                <span>THE COLLECTOR'S WORLD</span>
+                <span>SCROLL TO EXPLORE ↓</span>
+            </div>
+
+        </section>
+
+        <!-- VANTAGGI -->
+        <section class="service-strip">
+
+            <div class="service-item">
+                <span class="service-icon">✦</span>
+                <div>
+                    <strong>UN MONDO DA COLLEZIONARE</strong>
+                    <p>Scopri i tuoi personaggi preferiti</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <span class="service-icon">♡</span>
+                <div>
+                    <strong>LA TUA WISHLIST</strong>
+                    <p>Salva i prodotti che ami</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <span class="service-icon">◎</span>
+                <div>
+                    <strong>COLLEZIONI ICONICHE</strong>
+                    <p>Esplora cinque universi</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <span class="service-icon">⚡</span>
+                <div>
+                    <strong>LEVEL UP YOUR COLLECTION</strong>
+                    <p>Trova la tua prossima scoperta</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CATEGORIE -->
+        <section class="catalog-categories" id="categorie">
+
+            <div class="section-heading">
 
                 <div>
-
-                    <span>
-                        CALI STORE SELECTION
+                    <span class="section-kicker">
+                        FIND YOUR UNIVERSE
                     </span>
 
                     <h2>
-                        TRENDING
-                        <strong>NOW</strong>
+                        SCEGLI LA TUA
+                        <span>PASSIONE<span class="heading-dot">.</span></span>
                     </h2>
 
+                    <p>
+                        Ogni collezione ha il suo stile.
+                        Scopri quella che ti rappresenta.
+                    </p>
                 </div>
 
-                <a href="#shop" class="see-all">
-                    VEDI TUTTI →
+                <a href="#catalogo" class="section-link" (click)="selectCategory('TUTTI')">
+                    ESPLORA TUTTO ↗
                 </a>
 
             </div>
 
+            <div class="category-menu">
 
-            <div class="filter-bar">
+                @for (category of categories; track category.name; let i = $index) {
 
-                <button class="filter active">
-                    TUTTI
+                @if (category.name === 'FUNKO') {
+
+                <!-- SCHEDA FUNKO COLLEGATA ALLO SHOWROOM -->
+                <a routerLink="/showroom" class="category-tile category-funko">
+                    <span class="category-number">
+                        0{{ i + 1 }}
+                    </span>
+
+                    <span class="category-illustration">
+                        {{ category.emoji }}
+                    </span>
+
+                    <span class="category-details">
+                        <strong>{{ category.name }}</strong>
+                        <small>{{ category.products }}</small>
+                    </span>
+
+                    <span class="category-arrow">↗</span>
+                </a>
+
+                } @else {
+
+                <button type="button" class="category-tile" [class.is-selected]="activeCategory === category.name"
+                    [class.category-fuggler]="category.name === 'FUGGLER'"
+                    [class.category-sonny]="category.name === 'SONNY ANGEL'"
+                    [class.category-popmart]="category.name === 'POP MART'"
+                    [class.category-miniso]="category.name === 'MINISO'" (click)="selectCategory(category.name)">
+
+                    <span class="category-number">
+                        0{{ i + 1 }}
+                    </span>
+
+                    <span class="category-illustration">
+                        {{ category.emoji }}
+                    </span>
+
+                    <span class="category-details">
+                        <strong>{{ category.name }}</strong>
+                        <small>{{ category.products }}</small>
+                    </span>
+
+                    <span class="category-arrow">↗</span>
+
                 </button>
 
-                <button class="filter">
-                    FUNKO
-                </button>
+                }
 
-                <button class="filter">
-                    FUGGLER
-                </button>
+                }
 
-                <button class="filter">
-                    SONNY ANGEL
-                </button>
+            </div>
 
-                <button class="filter">
-                    POP MART
-                </button>
+        </section>
 
-                <button class="filter">
-                    MINISO
+        <!-- BANNER SECONDARIO -->
+        <section class="store-promotion" id="offerte">
+
+            <div class="promotion-content">
+
+                <span class="section-kicker">
+                    THE ART OF COLLECTING
+                </span>
+
+                <h2>
+                    MORE THAN TOYS.
+                    <span>PURE PASSION.</span>
+                </h2>
+
+                <p>
+                    Ogni personaggio ha una storia.
+                    Ogni collezione racconta qualcosa di te.
+                </p>
+
+                <a href="#catalogo" class="primary-action">
+                    ESPLORA IL CATALOGO ↗
+                </a>
+
+            </div>
+
+            <div class="promotion-art" aria-hidden="true">
+                <span class="promotion-star">✳</span>
+                <span class="promotion-word">CALI</span>
+            </div>
+
+        </section>
+
+        <!-- CATALOGO -->
+        <section class="live-catalog" id="catalogo">
+
+            <div class="section-heading catalog-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        CURATED FOR COLLECTORS
+                    </span>
+
+                    <h2>
+                        LA NOSTRA
+                        <span>COLLEZIONE<span class="heading-dot">.</span></span>
+                    </h2>
+
+                    <p>
+                        Esplora i prodotti disponibili nel catalogo CALI STORE.
+                    </p>
+
+                </div>
+
+                <div class="catalog-product-count">
+                    <span class="count-number">
+                        {{ displayedProducts.length }}
+                    </span>
+
+                    <span class="count-label">
+                        PRODOTTI TROVATI
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- FILTRI -->
+            <div class="catalog-controls">
+
+                <div class="category-filters">
+
+                    <button type="button" [class.active]="activeCategory === 'TUTTI' && !favoritesOnly"
+                        (click)="selectCategory('TUTTI')">
+                        TUTTI
+                    </button>
+
+                    @for (category of categories; track category.name) {
+
+                    <button type="button" [class.active]="activeCategory === category.name && !favoritesOnly"
+                        (click)="selectCategory(category.name)">
+                        {{ category.name }}
+                    </button>
+
+                    }
+
+                </div>
+
+                <div class="catalog-sort">
+
+                    <label for="product-sort">
+                        ORDINA PER
+                    </label>
+
+                    <select id="product-sort" [value]="sortOrder" (change)="onSortChange($event)">
+                        <option value="default">In evidenza</option>
+                        <option value="price-asc">Prezzo crescente</option>
+                        <option value="price-desc">Prezzo decrescente</option>
+                        <option value="name">Nome A-Z</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- CARICAMENTO -->
+            @if (loading) {
+
+            <div class="catalog-state loading-state">
+                <span class="loading-symbol">◌</span>
+                <h3>CARICAMENTO PRODOTTI...</h3>
+                <p>Stiamo preparando la tua collezione.</p>
+            </div>
+
+            } @else if (errorMessage) {
+
+            <div class="catalog-state error-state">
+
+                <span class="state-icon">!</span>
+
+                <h3>CONNESSIONE NON DISPONIBILE</h3>
+
+                <p>{{ errorMessage }}</p>
+
+                <button type="button" class="primary-action" (click)="loadProducts()">
+                    RIPROVA ↗
                 </button>
 
             </div>
 
+            } @else if (displayedProducts.length === 0) {
 
-            <div class="products-grid">
+            <div class="catalog-state empty-state">
 
-                @for (product of products; track product.name) {
+                <span class="state-icon">⌕</span>
 
-                <article class="product-card">
+                <h3>NESSUN PRODOTTO TROVATO</h3>
 
+                <p>
+                    Prova a modificare la ricerca o i filtri.
+                </p>
 
-                    <div class="product-visual" [class]="product.color">
+                <button type="button" class="primary-action" (click)="resetFilters()">
+                    MOSTRA TUTTI ↗
+                </button>
+
+            </div>
+
+            } @else {
+
+            <div class="product-grid">
+
+                @for (product of displayedProducts; track product.id) {
+
+                <article class="catalog-product">
+
+                    <div class="product-image-area">
 
                         <span class="product-badge">
                             {{ product.badge }}
                         </span>
 
-
-                        <button class="heart">
-                            ♡
+                        <button type="button" class="product-favorite" [class.is-favorite]="isFavorite(product.id)"
+                            (click)="toggleFavorite(product.id)" [attr.aria-label]="
+                                        isFavorite(product.id)
+                                            ? 'Rimuovi dai preferiti'
+                                            : 'Aggiungi ai preferiti'
+                                    ">
+                            {{ isFavorite(product.id) ? '♥' : '♡' }}
                         </button>
 
-
-                        <div class="product-emoji">
-                            {{ product.emoji }}
-                        </div>
-
-
-                        <div class="product-shine"></div>
-
-                    </div>
-
-
-                    <div class="product-details">
-
-                        <span class="product-category">
-                            {{ product.category }}
-                        </span>
-
-                        <h3>
-                            {{ product.name }}
-                        </h3>
-
-
-                        <div class="rating">
-                            ★★★★★
-                            <span>
-                                4.9
+                        <div class="product-visual" [class.visual-funko]="product.category === 'FUNKO'"
+                            [class.visual-fuggler]="product.category === 'FUGGLER'"
+                            [class.visual-sonny]="product.category === 'SONNY ANGEL'"
+                            [class.visual-popmart]="product.category === 'POP MART'"
+                            [class.visual-miniso]="product.category === 'MINISO'">
+                            <span class="product-emoji">
+                                {{ product.emoji }}
                             </span>
                         </div>
 
+                        <div class="product-quick-actions">
 
-                        <div class="price-row">
+                            <button type="button" (click)="addToCart(product)">
+                                + AGGIUNGI AL CARRELLO
+                            </button>
 
-                            <div>
+                        </div>
+
+                    </div>
+
+                    <div class="product-information">
+
+                        <div class="product-meta">
+
+                            <span class="product-category">
+                                {{ product.category }}
+                            </span>
+
+                            <span class="product-reference">
+                                #{{ product.id }}
+                            </span>
+
+                        </div>
+
+                        <h3>{{ product.name }}</h3>
+
+                        <p class="product-description">
+                            {{ product.description }}
+                        </p>
+
+                        <div class="product-buy-row">
+
+                            <div class="product-price">
+
+                                <span class="price-caption">
+                                    PREZZO
+                                </span>
 
                                 <strong>
-                                    €{{ product.price.toFixed(2) }}
+                                    {{
+                                    product.price
+                                    | currency:'EUR':'symbol':'1.2-2':'it-IT'
+                                    }}
                                 </strong>
-
-                                <del>
-                                    €{{ product.oldPrice.toFixed(2) }}
-                                </del>
 
                             </div>
 
-                            <button class="add-button">
+                            <button type="button" class="product-add-button" (click)="addToCart(product)"
+                                aria-label="Aggiungi al carrello">
                                 +
                             </button>
 
                         </div>
+
+                        <button type="button" class="edit-price-button" (click)="selectProduct(product)">
+                            MODIFICA PREZZO ↗
+                        </button>
 
                     </div>
 
@@ -458,294 +529,281 @@
 
             </div>
 
-        </div>
+            }
 
-    </section>
+        </section>
 
+        <!-- CHIUSURA -->
+        <section class="closing-banner">
 
-    <!-- ============================= -->
-    <!-- BIG PROMO -->
-    <!-- ============================= -->
-
-    <section class="promo" id="offerte">
-
-        <div class="promo-decoration">
-            CALI
-        </div>
-
-
-        <div class="promo-content">
-
-            <span>
-                ✦ CALI STORE EXCLUSIVE
+            <span class="section-kicker">
+                COLLECT WHAT YOU LOVE
             </span>
 
             <h2>
-                COLLECT
-                <br>
-                SOMETHING
-                <br>
-                <strong>AMAZING.</strong>
+                LA TUA PROSSIMA
+                <span>PASSIONE È QUI.</span>
             </h2>
 
-            <p>
-                Scopri le nostre collezioni,
-                le novità e le edizioni più ricercate.
-            </p>
-
-            <a href="#shop" class="promo-button">
-                SCOPRI LA COLLECTION →
+            <a href="#top" class="secondary-action">
+                TORNA SU ↑
             </a>
 
-        </div>
+        </section>
 
+    </main>
 
-        <div class="promo-art">
-
-            <div class="promo-circle"></div>
-
-            <div class="promo-object object-one">
-                🎭
-            </div>
-
-            <div class="promo-object object-two">
-                👼
-            </div>
-
-            <div class="promo-object object-three">
-                👹
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- FEATURES -->
-    <!-- ============================= -->
-
-    <section class="benefits">
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                🚚
-            </div>
-
-            <div>
-
-                <strong>
-                    SPEDIZIONI
-                </strong>
-
-                <p>
-                    Prepariamo ogni ordine con cura.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                🔒
-            </div>
-
-            <div>
-
-                <strong>
-                    PAGAMENTI SICURI
-                </strong>
-
-                <p>
-                    I tuoi acquisti sempre protetti.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                💬
-            </div>
-
-            <div>
-
-                <strong>
-                    SUPPORTO
-                </strong>
-
-                <p>
-                    Siamo qui per aiutarti.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                ⭐
-            </div>
-
-            <div>
-
-                <strong>
-                    CALI QUALITY
-                </strong>
-
-                <p>
-                    Selezioniamo prodotti speciali.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
     <!-- FOOTER -->
-    <!-- ============================= -->
+    <footer class="shop-footer">
 
-    <footer class="footer">
-
-        <div class="footer-top">
+        <div class="footer-main">
 
             <div class="footer-brand">
 
-                <div class="footer-logo">
-
-                    <strong>
-                        CALI
-                    </strong>
-
-                    <span>
-                        STORE
-                    </span>
-
-                </div>
+                <a class="brand" routerLink="/">
+                    <span class="brand-symbol">C</span>
+                    <span class="brand-name">CALI<span>STORE</span></span>
+                </a>
 
                 <p>
-                    Your world.
-                    Your collection.
-                    Your CALI STORE.
+                    Il tuo universo di collezionabili.
+                    Scopri, scegli e colleziona ciò che ami.
                 </p>
 
+            </div>
 
-                <div class="socials">
+            <div class="footer-links">
 
-                    <a href="#">
-                        IG
-                    </a>
+                <h3>ESPLORA</h3>
 
-                    <a href="#">
-                        TT
-                    </a>
-
-                    <a href="#">
-                        FB
-                    </a>
-
-                </div>
+                <a href="#catalogo">Catalogo</a>
+                <a href="#categorie">Categorie</a>
+                <a href="#offerte">In evidenza</a>
 
             </div>
 
+            <div class="footer-links">
 
-            <div class="footer-column">
+                <h3>ACCOUNT</h3>
 
-                <h4>
-                    SHOP
-                </h4>
+                <a routerLink="/login">Accedi</a>
 
-                <a href="#shop">
-                    Tutti i prodotti
+                <a href="#catalogo" (click)="toggleFavoritesView()">
+                    Preferiti
                 </a>
 
-                <a href="#categorie">
-                    Categorie
-                </a>
-
-                <a href="#novita">
-                    Nuovi arrivi
-                </a>
-
-                <a href="#offerte">
-                    Offerte
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    SUPPORTO
-                </h4>
-
-                <a href="#">
-                    Contatti
-                </a>
-
-                <a href="#">
-                    Spedizioni
-                </a>
-
-                <a href="#">
-                    Resi
-                </a>
-
-                <a href="#">
-                    FAQ
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    CALI STORE
-                </h4>
-
-                <a href="#">
-                    Chi siamo
-                </a>
-
-                <a href="#">
-                    Privacy
-                </a>
-
-                <a href="#">
-                    Termini e condizioni
-                </a>
+                <button type="button" (click)="toggleCart()">
+                    Il mio carrello
+                </button>
 
             </div>
 
         </div>
 
-
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 CALI STORE
-            </span>
-
-            <span>
-                MADE FOR COLLECTORS.
-            </span>
-
+        <div class="footer-legal">
+            <span>© CALI STORE</span>
+            <span>COLLECT WHAT YOU LOVE.</span>
+            <a href="#top">BACK TO TOP ↑</a>
         </div>
 
     </footer>
+
+    <!-- OVERLAY CARRELLO -->
+    @if (cartOpen) {
+
+    <div class="cart-overlay" (click)="toggleCart()"></div>
+
+    <aside class="cart-drawer" aria-label="Il tuo carrello">
+
+        <div class="cart-drawer-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    YOUR COLLECTION
+                </span>
+
+                <h2>
+                    IL CARRELLO
+                    <span>({{ cartCount }})</span>
+                </h2>
+
+            </div>
+
+            <button type="button" class="close-cart" (click)="toggleCart()" aria-label="Chiudi carrello">
+                ×
+            </button>
+
+        </div>
+
+        @if (cartItems.length === 0) {
+
+        <div class="empty-cart">
+
+            <span>🛒</span>
+
+            <h3>IL TUO CARRELLO È VUOTO</h3>
+
+            <p>
+                Il tuo prossimo pezzo da collezione ti aspetta.
+            </p>
+
+            <button type="button" class="primary-action" (click)="toggleCart()">
+                CONTINUA LO SHOPPING ↗
+            </button>
+
+        </div>
+
+        } @else {
+
+        <div class="cart-lines">
+
+            @for (item of cartItems; track item.product.id) {
+
+            <div class="cart-line">
+
+                <div class="cart-line-art">
+                    {{ item.product.emoji }}
+                </div>
+
+                <div class="cart-line-info">
+
+                    <h3>{{ item.product.name }}</h3>
+
+                    <p>
+                        {{
+                        item.product.price
+                        | currency:'EUR':'symbol':'1.2-2':'it-IT'
+                        }}
+                    </p>
+
+                    <div class="quantity-picker">
+
+                        <button type="button" (click)="changeCartQuantity(item.product.id, -1)">
+                            −
+                        </button>
+
+                        <span>{{ item.quantity }}</span>
+
+                        <button type="button" (click)="changeCartQuantity(item.product.id, 1)">
+                            +
+                        </button>
+
+                    </div>
+
+                    <button type="button" class="remove-cart-item" (click)="removeFromCart(item.product.id)">
+                        RIMUOVI
+                    </button>
+
+                </div>
+
+            </div>
+
+            }
+
+        </div>
+
+        <div class="cart-checkout">
+
+            <div class="cart-total-row">
+
+                <span>TOTALE</span>
+
+                <strong>
+                    {{
+                    cartTotal
+                    | currency:'EUR':'symbol':'1.2-2':'it-IT'
+                    }}
+                </strong>
+
+            </div>
+
+            <p>
+                Carrello dimostrativo.
+                Il checkout non è ancora disponibile.
+            </p>
+
+            <button type="button" class="primary-action" (click)="toggleCart()">
+                CONTINUA LO SHOPPING ↗
+            </button>
+
+        </div>
+
+        }
+
+    </aside>
+
+    }
+
+    <!-- MODIFICA PREZZO -->
+    @if (selectedProduct) {
+
+    <div class="edit-overlay" (click)="selectedProduct = null"></div>
+
+    <div class="edit-dialog" role="dialog" aria-modal="true" aria-label="Modifica prezzo">
+
+        <div class="edit-dialog-header">
+
+            <div>
+
+                <span class="section-kicker">
+                    PRODUCT MANAGEMENT
+                </span>
+
+                <h2>MODIFICA PREZZO</h2>
+
+            </div>
+
+            <button type="button" class="close-dialog" (click)="selectedProduct = null" aria-label="Chiudi">
+                ×
+            </button>
+
+        </div>
+
+        <div class="edit-product-info">
+
+            <span class="edit-product-emoji">
+                {{ selectedProduct.emoji }}
+            </span>
+
+            <div>
+
+                <strong>{{ selectedProduct.name }}</strong>
+
+                <p>
+                    Prezzo attuale:
+                    {{
+                    selectedProduct.price
+                    | currency:'EUR':'symbol':'1.2-2':'it-IT'
+                    }}
+                </p>
+
+            </div>
+
+        </div>
+
+        <label for="new-product-price">
+            NUOVO PREZZO (€)
+        </label>
+
+        <input id="new-product-price" type="number" min="0.01" step="0.01" [value]="newPrice"
+            (input)="onPriceInput($event)" />
+
+        <div class="edit-dialog-actions">
+
+            <button type="button" class="secondary-action" (click)="selectedProduct = null">
+                ANNULLA
+            </button>
+
+            <button type="button" class="primary-action" [disabled]="savingPrice || newPrice <= 0"
+                (click)="savePrice()">
+                {{ savingPrice ? 'SALVATAGGIO...' : 'SALVA PREZZO ↗' }}
+            </button>
+
+        </div>
+
+    </div>
+
+    }
 
 </div>

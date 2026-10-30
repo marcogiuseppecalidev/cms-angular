@@ -1,0 +1,402 @@
+/* ==============================
+   PAGINA PRINCIPALE
+============================== */
+
+:host {
+    display: block;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    background: #ffffff;
+    color: #29213b;
+}
+
+/* ==============================
+   PANNELLO SINISTRO
+============================== */
+
+.login-showcase {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 42px 8%;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 15%, #ff8cda 0, transparent 32%),
+        radial-gradient(circle at 90% 85%, #6335d9 0, transparent 40%),
+        linear-gradient(145deg, #8e42ed, #5525bd 65%, #371580);
+}
+
+.login-showcase::before,
+.login-showcase::after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.login-showcase::before {
+    width: 330px;
+    height: 330px;
+    top: -150px;
+    right: -100px;
+}
+
+.login-showcase::after {
+    width: 240px;
+    height: 240px;
+    bottom: -100px;
+    left: -100px;
+}
+
+.store-brand {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: rgb(255 255 255 / 18%);
+    font-size: 26px;
+}
+
+.showcase-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 540px;
+    margin: 45px auto;
+}
+
+.showcase-badge,
+.welcome-badge {
+    display: inline-block;
+    padding: 9px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.showcase-badge {
+    border: 1px solid rgb(255 255 255 / 30%);
+    background: rgb(255 255 255 / 12%);
+}
+
+.showcase-content h1 {
+    margin: 25px 0 18px;
+    font-size: clamp(38px, 4vw, 62px);
+    line-height: 1.08;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.showcase-content h1 span {
+    color: #ffcfef;
+}
+
+.showcase-content>p {
+    max-width: 400px;
+    color: rgb(255 255 255 / 85%);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Spazio provvisorio per l'illustrazione del negozio */
+
+/* Immagine dei giocattoli CALI STORE */
+
+.store-image {
+    width: 100%;
+    height: 240px;
+    margin-top: 28px;
+    overflow: hidden;
+    border: 2px solid rgb(255 255 255 / 35%);
+    border-radius: 24px;
+    background: rgb(255 255 255 / 10%);
+    box-shadow: 0 18px 40px rgb(35 10 80 / 25%);
+}
+
+.store-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.store-image:hover img {
+    transform: scale(1.04);
+}
+
+.showcase-footer {
+    position: relative;
+    z-index: 1;
+    color: rgb(255 255 255 / 75%);
+    font-size: 13px;
+}
+
+/* ==============================
+   PANNELLO DESTRO
+============================== */
+
+.login-form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 8%;
+    background:
+        radial-gradient(circle at 100% 0%, #f8eaff 0, transparent 35%),
+        #ffffff;
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 430px;
+}
+
+.mobile-brand {
+    display: none;
+    margin-bottom: 35px;
+    color: #7134d7;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.welcome-badge {
+    color: #8739d8;
+    background: #f4e8ff;
+}
+
+.login-form-container h2 {
+    margin: 22px 0 10px;
+    color: #29213b;
+    font-size: clamp(32px, 3vw, 42px);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.login-description {
+    margin-bottom: 35px;
+    color: #80788d;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ==============================
+   CAMPI DEL MODULO
+============================== */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    color: #40364f;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 17px 18px;
+    border: 1px solid #e7dfef;
+    border-radius: 14px;
+    outline: none;
+    background: #ffffff;
+    color: #29213b;
+    font: inherit;
+    font-size: 14px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #aaa2b7;
+}
+
+.form-group input:hover {
+    border-color: #cdb0f3;
+}
+
+.form-group input:focus {
+    border-color: #9147e8;
+    background: #fffaff;
+    box-shadow: 0 0 0 4px rgb(145 71 232 / 12%);
+}
+
+/* ==============================
+   PULSANTE ACCEDI
+============================== */
+
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(100deg, #8739e8, #c23eea);
+    box-shadow: 0 10px 25px rgb(135 57 232 / 25%);
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.login-button span {
+    font-size: 20px;
+    transition: transform 0.2s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgb(135 57 232 / 35%);
+}
+
+.login-button:hover span {
+    transform: translateX(4px);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+/* ==============================
+   REGISTRAZIONE E RITORNO
+============================== */
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 32px 0 22px;
+    color: #a29aaa;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.login-divider::before,
+.login-divider::after {
+    flex: 1;
+    height: 1px;
+    background: #eee7f4;
+    content: "";
+}
+
+.register-link {
+    color: #81788e;
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.register-link a {
+    color: #8739d8;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    color: #c23eea;
+    text-decoration: underline;
+}
+
+.back-home {
+    display: block;
+    margin-top: 28px;
+    color: #8d829b;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.back-home:hover {
+    color: #8739d8;
+}
+
+/* ==============================
+   VERSIONE SMARTPHONE E TABLET
+============================== */
+
+@media (max-width: 900px) {
+    .login-page {
+        grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .login-showcase {
+        padding: 32px 7%;
+    }
+
+    .login-form-panel {
+        padding: 35px 7%;
+    }
+
+    .showcase-content h1 {
+        font-size: 40px;
+    }
+
+    .store-image-placeholder {
+        min-height: 140px;
+    }
+}
+
+@media (max-width: 650px) {
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-showcase {
+        display: none;
+    }
+
+    .login-form-panel {
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding: 35px 24px;
+    }
+
+    .login-form-container {
+        max-width: 430px;
+    }
+
+    .mobile-brand {
+        display: block;
+    }
+
+    .login-form-container h2 {
+        font-size: 36px;
+    }
+}
