@@ -1,0 +1,224 @@
+<div class="showroom-page">
+
+    <!-- HEADER -->
+    <header class="showroom-header">
+
+        <a routerLink="/" class="back-home">
+            ← TORNA ALLO STORE
+        </a>
+
+        <a routerLink="/" class="showroom-logo">
+            CALI<span>STORE</span>
+        </a>
+
+        <div class="header-collection">
+            FUNKO POP / ONE PIECE
+        </div>
+
+    </header>
+
+    <!-- INTRODUZIONE -->
+    <section class="showroom-intro">
+
+        <div class="intro-label">
+            <span class="red-line"></span>
+            COLLEZIONE ONE PIECE
+        </div>
+
+        <h1>
+            FUNKO POP
+            <span>ONE PIECE</span>
+        </h1>
+
+        <p>
+            Esplora la collezione One Piece.
+            Ruota i prodotti, scopri le confezioni
+            e crea il tuo equipaggio.
+        </p>
+
+        <div class="collection-counter">
+            <span class="counter-dot"></span>
+            {{ products.length }} FUNKO POP NELLO SHOWROOM
+        </div>
+
+    </section>
+
+    <!-- SHOWROOM PRINCIPALE -->
+    <main class="showroom-stage">
+
+        <div class="stage-grid"></div>
+        <div class="stage-glow"></div>
+
+        <!-- GRIGLIA PRODOTTI -->
+        <div class="figures-grid">
+
+            @for (product of products; track product.id) {
+
+            <article class="figure-display" [class.selected]="isSelected(product.id)">
+
+                <!-- NUMERO PRODOTTO -->
+                <div class="figure-number">
+                    #{{ product.id }}
+                </div>
+
+                <!-- MODALITÀ FUNKO / SCATOLA -->
+                <div class="figure-view-switch">
+
+                    <button type="button" class="view-switch-button" [class.active]="product.viewMode === 'funko'"
+                        (click)="setViewMode(product, 'funko')">
+                        <span>♟</span>
+                        FUNKO
+                    </button>
+
+                    <button type="button" class="view-switch-button" [class.active]="product.viewMode === 'box'"
+                        (click)="setViewMode(product, 'box')">
+                        <span>⬡</span>
+                        SCATOLA
+                    </button>
+
+                </div>
+
+                <!-- VISUALIZZAZIONE DEL PRODOTTO -->
+                <div class="figure-character figure-rotatable" [class.box-mode]="product.viewMode === 'box'"
+                    (pointerdown)="startDrag(product, $event)" (pointerup)="endDrag(product, $event)"
+                    (pointercancel)="cancelDrag()" (lostpointercapture)="cancelDrag()">
+
+                    <div class="character-glow"></div>
+
+                    <!-- FRECCIA SINISTRA -->
+                    <button type="button" class="rotation-arrow rotation-prev" (pointerdown)="$event.stopPropagation()"
+                        (click)="rotateProduct(product, -1)"
+                        [attr.aria-label]="'Ruota ' + product.name + ' a sinistra'">
+                        ‹
+                    </button>
+
+                    <!-- IMMAGINE ATTUALE -->
+                    <img [src]="getCurrentImage(product)"
+                        [alt]="product.name + ' - ' + (product.viewMode === 'funko' ? 'personaggio' : 'confezione')"
+                        class="character-image" draggable="false" />
+
+                    <!-- FRECCIA DESTRA -->
+                    <button type="button" class="rotation-arrow rotation-next" (pointerdown)="$event.stopPropagation()"
+                        (click)="rotateProduct(product, 1)" [attr.aria-label]="'Ruota ' + product.name + ' a destra'">
+                        ›
+                    </button>
+
+                    <!-- INDICAZIONE ROTAZIONE -->
+                    <span class="rotation-hint">
+                        ↔ TRASCINA PER RUOTARE
+                    </span>
+
+                </div>
+
+                <!-- PEDANA ROSSA -->
+                <div class="figure-platform">
+
+                    <div class="platform-top"></div>
+                    <div class="platform-middle"></div>
+                    <div class="platform-bottom"></div>
+
+                </div>
+
+                <!-- MINIATURE DELLE ANGOLAZIONI -->
+                <div class="figure-thumbnails">
+
+                    @for (
+                    image of getActiveImages(product);
+                    track $index;
+                    let angle = $index
+                    ) {
+
+                    <button type="button" class="figure-thumbnail" [class.active]="product.currentAngle === angle"
+                        (click)="selectAngle(product, angle)"
+                        [attr.aria-label]="'Visualizza angolazione ' + (angle + 1) + ' di ' + product.name">
+
+                        <img [src]="image" [alt]="product.name + ' angolazione ' + (angle + 1)" loading="lazy" />
+
+                    </button>
+
+                    }
+
+                </div>
+
+                <!-- INFORMAZIONI PRODOTTO -->
+                <div class="figure-information">
+
+                    <span class="figure-series">
+                        ONE PIECE / FUNKO POP
+                    </span>
+
+                    <h2>
+                        {{ product.name }}
+                    </h2>
+
+                    <strong class="figure-price">
+                        {{ product.price | currency:'EUR' }}
+                    </strong>
+
+                    <!-- PULSANTI -->
+                    <div class="figure-actions">
+
+                        <button type="button" class="select-button" [class.active]="isSelected(product.id)"
+                            (click)="toggleSelection(product.id)">
+                            {{
+                            isSelected(product.id)
+                            ? '✓ SELEZIONATO'
+                            : '+ SELEZIONA'
+                            }}
+                        </button>
+
+                        <a class="details-button" [routerLink]="['/prodotto', product.id]">
+                            DETTAGLI ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            }
+
+        </div>
+
+        <div class="stage-bottom-label">
+            CALI STORE — COLLECT WHAT YOU LOVE
+        </div>
+
+    </main>
+
+    <!-- BARRA SELEZIONE MULTIPLA -->
+    @if (selectedIds.length > 0) {
+
+    <div class="selection-bar">
+
+        <div class="selection-info">
+
+            <span class="selection-count">
+                {{ selectedIds.length }}
+            </span>
+
+            <div>
+                <strong>FUNKO SELEZIONATI</strong>
+                <p>Il tuo equipaggio sta prendendo forma.</p>
+            </div>
+
+        </div>
+
+        <div class="selection-actions">
+
+            <button type="button" class="clear-selection" (click)="clearSelection()">
+                ANNULLA
+            </button>
+
+            <button type="button" class="add-selected-button" (click)="addSelectedToCart()">
+                AGGIUNGI AL CARRELLO ↗
+            </button>
+
+        </div>
+
+    </div>
+
+    }
+
+</div>

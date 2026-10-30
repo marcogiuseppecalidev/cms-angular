@@ -1,0 +1,1130 @@
+/* ==========================================
+   CALI STORE — FUNKO POP ONE PIECE
+   CINEMATIC NEON SHOWROOM
+   ========================================== */
+
+:host {
+    display: block;
+    min-height: 100vh;
+    color: #fff;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+:host *,
+:host *::before,
+:host *::after {
+    box-sizing: border-box;
+}
+
+:host button {
+    font: inherit;
+    cursor: pointer;
+}
+
+:host a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.showroom-page {
+    --red: #ff254d;
+    --red-light: #ff5875;
+    --muted: #a9a4af;
+
+    min-height: 100vh;
+    overflow: hidden;
+    padding-bottom: 110px;
+
+    background:
+        radial-gradient(ellipse at 50% 50%,
+            rgba(116, 8, 35, 0.27),
+            transparent 64%),
+        linear-gradient(180deg,
+            #08080d 0%,
+            #140b12 53%,
+            #08080d 100%);
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.showroom-header {
+    position: relative;
+    z-index: 10;
+
+    min-height: 64px;
+    padding: 15px clamp(18px, 5vw, 85px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    background: rgba(7, 7, 12, 0.88);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.back-home {
+    color: #d3ced8 !important;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    transition: color 0.2s;
+}
+
+.back-home:hover {
+    color: var(--red-light) !important;
+}
+
+.showroom-logo {
+    font-size: 27px;
+    font-weight: 1000;
+    font-style: italic;
+    letter-spacing: -1.8px;
+}
+
+.showroom-logo span {
+    color: var(--red);
+}
+
+.header-collection {
+    color: #b8b1c0;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+/* ==========================================
+   INTRO
+   ========================================== */
+
+.showroom-intro {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 36px 20px 18px;
+
+    text-align: center;
+}
+
+.intro-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #ff6681;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.red-line {
+    width: 30px;
+    height: 2px;
+    background: var(--red);
+}
+
+.showroom-intro h1 {
+    margin: 14px 0 12px;
+
+    color: #fff;
+    font-size: clamp(48px, 6vw, 84px);
+    font-weight: 1000;
+    font-style: italic;
+    line-height: 0.96;
+    letter-spacing: -3px;
+
+    text-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.showroom-intro h1 span {
+    display: block;
+    color: var(--red);
+
+    text-shadow: 0 0 35px rgba(255, 37, 77, 0.17);
+}
+
+.showroom-intro p {
+    max-width: 650px;
+    margin: 17px auto 12px;
+
+    color: #b7b0bd;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.collection-counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 7px 13px;
+
+    border: 1px solid rgba(255, 55, 91, 0.25);
+    border-radius: 30px;
+
+    background: rgba(255, 37, 77, 0.06);
+    color: #e1d5df;
+
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.counter-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+
+    background: var(--red);
+    box-shadow: 0 0 12px var(--red);
+}
+
+/* ==========================================
+   STAGE
+   ========================================== */
+
+.showroom-stage {
+    position: relative;
+    isolation: isolate;
+
+    padding: 20px clamp(15px, 2vw, 40px) 65px;
+}
+
+.stage-grid {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px);
+
+    background-size: 85px 85px;
+
+    mask-image: linear-gradient(180deg,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent);
+}
+
+.stage-glow {
+    position: absolute;
+    z-index: -1;
+
+    top: 12%;
+    left: 50%;
+
+    width: 85%;
+    height: 65%;
+
+    transform: translateX(-50%);
+    border-radius: 50%;
+
+    background: rgba(181, 11, 42, 0.13);
+    filter: blur(110px);
+
+    pointer-events: none;
+}
+
+.stage-title {
+    display: none;
+}
+
+/* ==========================================
+   CINQUE POSTAZIONI
+   ========================================== */
+
+.figures-grid {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1800px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.figure-display {
+    position: relative;
+
+    min-width: 0;
+    padding: 18px 12px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 35, 75, 0.025) 60%,
+            rgba(255, 255, 255, 0.012));
+
+    box-shadow:
+        inset 0 0 30px rgba(255, 255, 255, 0.012),
+        0 10px 35px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.figure-display:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 54, 91, 0.4);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 37, 77, 0.07);
+}
+
+.figure-display.selected {
+    border-color: rgba(255, 37, 77, 0.85);
+
+    box-shadow:
+        0 0 35px rgba(255, 37, 77, 0.12),
+        inset 0 0 25px rgba(255, 37, 77, 0.035);
+}
+
+.figure-number {
+    position: absolute;
+    top: 16px;
+    left: 13px;
+
+    color: #aaa2b0;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   FUNKO / SCATOLA
+   ========================================== */
+
+.figure-view-switch {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    width: 100%;
+    min-height: 33px;
+    padding-left: 28px;
+}
+
+.view-switch-button {
+    min-height: 29px;
+    padding: 6px 9px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.025);
+    color: #c2b9c6;
+
+    font-size: 9px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.2px;
+
+    transition: all 0.2s;
+}
+
+.view-switch-button span {
+    font-size: 13px;
+}
+
+.view-switch-button:hover {
+    border-color: rgba(255, 37, 77, 0.65);
+    color: white;
+}
+
+.view-switch-button.active {
+    border-color: var(--red);
+    background: rgba(255, 37, 77, 0.19);
+    color: #ff5a77;
+
+    box-shadow: inset 0 0 12px rgba(255, 37, 77, 0.09);
+}
+
+/* ==========================================
+   AREA PERSONAGGIO RUOTABILE
+   ========================================== */
+
+.figure-character {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    height: 225px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    margin-top: 8px;
+    margin-bottom: -6px;
+}
+
+.figure-rotatable {
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.figure-rotatable:active {
+    cursor: grabbing;
+}
+
+.character-glow {
+    position: absolute;
+    z-index: -1;
+
+    bottom: 5px;
+    left: 50%;
+
+    width: 78%;
+    height: 80%;
+
+    transform: translateX(-50%);
+    border-radius: 50%;
+
+    background: rgba(255, 35, 75, 0.23);
+    filter: blur(42px);
+
+    pointer-events: none;
+}
+
+.figure-display:hover .character-glow {
+    background: rgba(255, 35, 75, 0.34);
+}
+
+.character-image {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+    max-width: 220px;
+    height: 210px;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    filter:
+        drop-shadow(0 14px 12px rgba(0, 0, 0, 0.65));
+
+    pointer-events: none;
+    user-select: none;
+
+    transition:
+        transform 0.25s,
+        filter 0.25s;
+}
+
+.figure-display:hover .character-image {
+    transform: translateY(-4px);
+}
+
+.figure-character.box-mode .character-image {
+    max-width: 195px;
+    height: 205px;
+}
+
+.figure-display.selected .character-image {
+    filter:
+        drop-shadow(0 14px 12px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 16px rgba(255, 37, 77, 0.25));
+}
+
+/* ==========================================
+   FRECCE ROTAZIONE
+   ========================================== */
+
+.rotation-arrow {
+    position: absolute;
+    z-index: 6;
+
+    top: 49%;
+
+    width: 33px;
+    height: 33px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 160, 177, 0.38);
+    border-radius: 50%;
+
+    background: rgba(17, 9, 16, 0.75);
+    color: white;
+
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    line-height: 1;
+
+    box-shadow: 0 0 13px rgba(255, 37, 77, 0.12);
+
+    transform: translateY(-50%);
+    transition: all 0.2s;
+}
+
+.rotation-prev {
+    left: 1px;
+}
+
+.rotation-next {
+    right: 1px;
+}
+
+.rotation-arrow:hover {
+    border-color: var(--red);
+    background: rgba(255, 37, 77, 0.35);
+    box-shadow: 0 0 18px rgba(255, 37, 77, 0.25);
+}
+
+.rotation-hint {
+    position: absolute;
+    z-index: 4;
+
+    bottom: 5px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: rgba(255, 255, 255, 0.52);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 0.7px;
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   PEDANE ROSSE NEON
+   ========================================== */
+
+.figure-platform {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 240px);
+    height: 65px;
+
+    margin-top: -5px;
+
+    filter: drop-shadow(0 12px 15px rgba(0, 0, 0, 0.6));
+}
+
+.platform-top {
+    position: absolute;
+    z-index: 3;
+
+    top: 0;
+    left: 3%;
+
+    width: 94%;
+    height: 40px;
+
+    border: 3px solid #ff6b83;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(ellipse at 50% 35%,
+            #481522,
+            #1a0d16 65%,
+            #08080c);
+
+    box-shadow:
+        0 0 12px rgba(255, 37, 77, 1),
+        0 0 25px rgba(255, 37, 77, 0.42),
+        inset 0 0 20px rgba(255, 37, 77, 0.2);
+}
+
+.platform-middle {
+    position: absolute;
+    z-index: 2;
+
+    top: 19px;
+    left: 3%;
+
+    width: 94%;
+    height: 36px;
+
+    border-radius: 0 0 50% 50%;
+
+    background:
+        linear-gradient(180deg,
+            #82152b,
+            #350c19 55%,
+            #10090e);
+
+    box-shadow:
+        inset 0 -7px 13px rgba(0, 0, 0, 0.6),
+        0 0 18px rgba(255, 37, 77, 0.2);
+}
+
+.platform-bottom {
+    position: absolute;
+    z-index: 1;
+
+    bottom: 4px;
+    left: 3%;
+
+    width: 94%;
+    height: 18px;
+
+    border-bottom: 3px solid var(--red);
+    border-radius: 50%;
+
+    background: #190a11;
+
+    box-shadow:
+        0 0 20px rgba(255, 37, 77, 0.65),
+        0 10px 25px rgba(255, 37, 77, 0.18);
+}
+
+.figure-display.selected .platform-top {
+    border-color: #fff;
+
+    box-shadow:
+        0 0 18px rgba(255, 37, 77, 1),
+        0 0 40px rgba(255, 37, 77, 0.7);
+}
+
+/* ==========================================
+   MINIATURE ANGOLAZIONI
+   ========================================== */
+
+.figure-thumbnails {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    margin-top: 5px;
+}
+
+.figure-thumbnail {
+    width: 45px;
+    height: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 45px;
+
+    padding: 3px;
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.figure-thumbnail:hover {
+    border-color: rgba(255, 37, 77, 0.7);
+}
+
+.figure-thumbnail.active {
+    border-color: var(--red);
+
+    box-shadow:
+        0 0 0 1px rgba(255, 37, 77, 0.4),
+        0 0 12px rgba(255, 37, 77, 0.12);
+}
+
+.figure-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* ==========================================
+   INFORMAZIONI PRODOTTO
+   ========================================== */
+
+.figure-information {
+    position: relative;
+    z-index: 4;
+
+    width: 100%;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    text-align: center;
+}
+
+.figure-series {
+    color: #ff627e;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+.figure-information h2 {
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 7px 0 2px;
+
+    color: #fff;
+    font-size: clamp(13px, 1.2vw, 18px);
+    font-weight: 1000;
+    font-style: italic;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
+}
+
+.figure-price {
+    display: block;
+    margin-top: 2px;
+
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.figure-actions {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.select-button,
+.details-button {
+    min-height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+
+    padding: 8px 5px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.1px;
+    text-align: center;
+
+    transition: all 0.2s;
+}
+
+.select-button {
+    border: 1px solid var(--red);
+    background: var(--red);
+    color: white;
+}
+
+.select-button:hover {
+    background: #ff4969;
+    transform: translateY(-2px);
+}
+
+.select-button.active {
+    border-color: var(--red-light);
+    background: rgba(255, 37, 77, 0.13);
+    color: #ff7890;
+}
+
+.details-button {
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.025);
+    color: white;
+}
+
+.details-button:hover {
+    border-color: var(--red);
+    background: rgba(255, 37, 77, 0.13);
+    transform: translateY(-2px);
+}
+
+.stage-bottom-label {
+    margin-top: 50px;
+
+    color: #77707e;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* ==========================================
+   BARRA SELEZIONE MULTIPLA
+   ========================================== */
+
+.selection-bar {
+    position: fixed;
+    z-index: 100;
+
+    right: 50%;
+    bottom: 22px;
+
+    width: min(calc(100% - 32px), 780px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    padding: 16px 20px;
+
+    border: 1px solid rgba(255, 78, 104, 0.5);
+    border-radius: 13px;
+
+    background: rgba(23, 17, 26, 0.96);
+
+    box-shadow:
+        0 15px 60px rgba(0, 0, 0, 0.65),
+        0 0 30px rgba(255, 37, 77, 0.12);
+
+    backdrop-filter: blur(18px);
+    transform: translateX(50%);
+
+    animation: barAppear 0.3s ease both;
+}
+
+.selection-info {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.selection-count {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 9px;
+    background: var(--red);
+    color: white;
+
+    font-size: 21px;
+    font-weight: 1000;
+}
+
+.selection-info strong {
+    display: block;
+
+    color: white;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.selection-info p {
+    margin: 5px 0 0;
+
+    color: #aaa2af;
+    font-size: 11px;
+}
+
+.selection-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.clear-selection,
+.add-selected-button {
+    min-height: 43px;
+    padding: 10px 15px;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.clear-selection {
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    background: transparent;
+    color: white;
+}
+
+.clear-selection:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.add-selected-button {
+    border: 1px solid var(--red);
+    background: var(--red);
+    color: white;
+}
+
+.add-selected-button:hover {
+    background: #ff4a68;
+}
+
+/* ==========================================
+   ANIMAZIONI
+   ========================================== */
+
+@keyframes barAppear {
+    from {
+        opacity: 0;
+        transform: translate(50%, 25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(50%, 0);
+    }
+}
+
+/* ==========================================
+   MONITOR MEDI
+   ========================================== */
+
+@media (max-width: 1350px) {
+
+    .figures-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 1050px;
+        gap: 18px;
+    }
+
+    .figure-information h2 {
+        font-size: 18px;
+    }
+
+    .figure-character {
+        height: 235px;
+    }
+
+    .character-image {
+        height: 220px;
+    }
+
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 850px) {
+
+    .figures-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 700px;
+        gap: 16px;
+    }
+
+    .showroom-intro h1 {
+        font-size: 65px;
+    }
+
+    .figure-character {
+        height: 220px;
+    }
+
+    .character-image {
+        height: 205px;
+    }
+
+}
+
+/* ==========================================
+   SMARTPHONE
+   ========================================== */
+
+@media (max-width: 580px) {
+
+    .showroom-header {
+        min-height: 62px;
+        padding: 14px 15px;
+    }
+
+    .back-home {
+        font-size: 9px;
+    }
+
+    .showroom-logo {
+        font-size: 21px;
+    }
+
+    .header-collection {
+        display: none;
+    }
+
+    .showroom-intro {
+        padding: 35px 17px 15px;
+    }
+
+    .intro-label {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .showroom-intro h1 {
+        font-size: clamp(44px, 12vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .showroom-intro p {
+        font-size: 12px;
+    }
+
+    .collection-counter {
+        font-size: 8px;
+    }
+
+    .showroom-stage {
+        padding: 15px 15px 80px;
+    }
+
+    .figures-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 20px;
+    }
+
+    .figure-display {
+        padding: 20px 16px;
+    }
+
+    .figure-character {
+        height: 245px;
+    }
+
+    .character-image {
+        max-width: 240px;
+        height: 225px;
+    }
+
+    .figure-character.box-mode .character-image {
+        max-width: 220px;
+        height: 220px;
+    }
+
+    .figure-platform {
+        width: min(100%, 260px);
+    }
+
+    .figure-thumbnail {
+        width: 52px;
+        height: 55px;
+        flex-basis: 52px;
+    }
+
+    .figure-information h2 {
+        font-size: 20px;
+    }
+
+    .figure-price {
+        font-size: 20px;
+    }
+
+    .selection-bar {
+        bottom: 12px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 13px;
+
+        padding: 14px;
+    }
+
+    .selection-info {
+        gap: 11px;
+    }
+
+    .selection-count {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .selection-info strong {
+        font-size: 11px;
+    }
+
+    .selection-info p {
+        font-size: 10px;
+    }
+
+    .selection-actions {
+        width: 100%;
+    }
+
+    .clear-selection {
+        flex: 1;
+    }
+
+    .add-selected-button {
+        flex: 2;
+    }
+
+}
+
+/* ==========================================
+   ACCESSIBILITÀ
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    :host *,
+    :host *::before,
+    :host *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
